@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="jagu/jagu.vcxproj" Id="377de2dd-af24-4c0f-8899-be92b10e0028" />
+</Solution>
