@@ -22,8 +22,8 @@ struct LineInfo {
 // [가로 스캔]
 LineInfo scan_width_line(int pan[19][19], int y) {
 	LineInfo info = { 0, 0, 0, 0, -1, -1 };
-	int state = 0;
-	int current_count = 0;
+	int state = 0;// 전 돌 상태
+	int current_count = 0;// 현재 연속 개수
 
 	for (int x = 0; x < 19; ++x) {
 		int stone = pan[y][x];
@@ -176,7 +176,7 @@ int main() {
 			LineInfo res = scan_width_line(pan, y);
 			if (res.max_count >= 2) {
 				cout << "[가로 " << y << "줄] -> 흑: " << res.black_total << "개, 백: " << res.white_total << "개";
-				cout << " | 최대 연속: " << (res.max_color == 1 ? "흑" : "백") << "돌 " << res.max_count << "개 (★돌 시작 좌표: " << res.max_start_x << ", " << res.max_start_y << ")\n";
+				cout << " | 최대 연속: " << (res.max_color == 1 ? "흑" : "백") << "돌 " << res.max_count << "개 (돌 시작 좌표: " << res.max_start_x << ", " << res.max_start_y << ")\n";
 			}
 		}
 
